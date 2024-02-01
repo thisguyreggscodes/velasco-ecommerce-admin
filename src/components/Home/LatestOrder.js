@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import Message from "../LoadingError/Error";
 import Loading from "../LoadingError/Loading";
 
+// ... (imports)
+
 const LatestOrder = (props) => {
   const { loading, error, orders } = props;
+
   return (
     <div className="card-body">
       <h4 className="card-title">New orders</h4>
@@ -20,9 +23,9 @@ const LatestOrder = (props) => {
               {orders.slice(0, 5).map((order) => (
                 <tr key={order._id}>
                   <td>
-                    <b>{order.user.name}</b>
+                    <b>{order.user?.name || "N/A"}</b>
                   </td>
-                  <td>{order.user.email}</td>
+                  <td>{order.user?.email || "N/A"}</td>
                   <td>Php{order.totalPrice}</td>
                   <td>
                     {order.isPaid ? (
@@ -52,3 +55,4 @@ const LatestOrder = (props) => {
 };
 
 export default LatestOrder;
+
