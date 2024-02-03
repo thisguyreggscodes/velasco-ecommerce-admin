@@ -15,7 +15,7 @@ const ProductsStatistics = () => {
               width: "100%",
               height: "350px",
             }}
-            src="https://charts.mongodb.com/charts-example-shoeshop-wizvv/public/dashboards/98edb03d-21ca-440f-8f8a-42a2d58101b1"
+            src="https://charts.mongodb.com/charts-velasco-mern-hzmlc"
           ></iframe>
         </article>
       </div>
