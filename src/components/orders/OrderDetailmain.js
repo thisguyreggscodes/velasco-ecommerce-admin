@@ -41,7 +41,7 @@ const OrderDetailmain = (props) => {
         <Loading />
       ) : error ? (
         <Message variant="alert-danger">{error}</Message>
-      ) : (
+      ) : order ? ( // Add a conditional check for the 'order' object
         <div className="card">
           <header className="card-header p-3 Header-green">
             <div className="row align-items-center ">
@@ -108,7 +108,7 @@ const OrderDetailmain = (props) => {
             </div>
           </div>
         </div>
-      )}
+      ) : null}
     </section>
   );
 };

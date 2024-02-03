@@ -23,10 +23,10 @@ const Orders = (props) => {
         {orders.map((order) => (
           <tr key={order._id}>
             <td>
-              <b>{order.user.name}</b>
+              <b>{order.user?.name || "N/A"}</b>
             </td>
-            <td>{order.user.email}</td>
-            <td>${order.totalPrice}</td>
+            <td>{order.user?.email || "N/A"}</td>
+            <td>${order.totalPrice || "N/A"}</td>
             <td>
               {order.isPaid ? (
                 <span className="badge rounded-pill alert-success">
@@ -53,27 +53,6 @@ const Orders = (props) => {
             </td>
           </tr>
         ))}
-
-        {/* Not paid Not delivered */}
-        {/* <tr>
-          <td>
-            <b>Velcro Sneakers For Boys & Girls (Blue)</b>
-          </td>
-          <td>user@example.com</td>
-          <td>$45,789</td>
-          <td>
-            <span className="badge rounded-pill alert-danger">Not paid</span>
-          </td>
-          <td>Dec 12 2021</td>
-          <td>
-            <span className="badge btn-dark">Not Delivered</span>
-          </td>
-          <td className="d-flex justify-content-end align-item-center">
-            <Link to={`/order`} className="text-success">
-              <i className="fas fa-eye"></i>
-            </Link>
-          </td>
-        </tr> */}
       </tbody>
     </table>
   );
