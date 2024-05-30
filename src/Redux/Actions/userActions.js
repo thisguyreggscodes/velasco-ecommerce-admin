@@ -81,7 +81,8 @@ export const listUser = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/users`, config);
+    const { data } = await axios.get(`/users`, config);
+    //const { data } = await axios.get(`/api/users`, config); 'true value'
 
     dispatch({ type: USER_LIST_SUCCESS, payload: data });
   } catch (error) {
@@ -98,3 +99,4 @@ export const listUser = () => async (dispatch, getState) => {
     });
   }
 };
+//admin logon check
